@@ -105,14 +105,14 @@ export default defineNuxtModule<NuxtI18nOptions>({
      */
 
     // for public
-    nuxt.options.runtimeConfig.public.i18n = defu(nuxt.options.runtimeConfig.public.i18n, {
+    nuxt.options.runtimeConfig.public.i18n = defu(nuxt.options.runtimeConfig.public.i18n as undefined, {
       experimental: options.experimental,
       baseUrl: options.baseUrl
       // TODO: we should support more i18n module options. welcome PRs :-)
     })
 
     // for privates
-    nuxt.options.runtimeConfig.i18n = defu(nuxt.options.runtimeConfig.i18n, {
+    nuxt.options.runtimeConfig.i18n = defu(nuxt.options.runtimeConfig.i18n as undefined, {
       precompile: options.precompile,
       ssr: nuxt.options.ssr
     })
