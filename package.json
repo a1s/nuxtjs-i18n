@@ -43,6 +43,7 @@
   "scripts": {
     "build": "nuxi build-module .",
     "stub": "nuxi build-module --stub .",
+    "prepare": "nuxi build-module .",
     "prepack": "pnpm build",
     "release": "bumpp --commit \"release: v%s\" --push --tag",
     "changelog": "gh-changelogen --repo=nuxt-community/i18n-module",
