@@ -299,9 +299,12 @@ export function detectRedirect<Context extends NuxtApp = NuxtApp>(
     !isStaticGenerate &&
     !differentDomains &&
     strategy !== 'no_prefix' &&
+    /* XXX This doesn't work, see https://github.com/nuxt-modules/i18n/issues/1977
     // skip if already on the new locale unless the strategy is "prefix_and_default" and this is the default
     // locale, in which case we might still redirect as we prefer unprefixed route in this case.
     (routeLocaleGetter(route) !== targetLocale || (strategy === 'prefix_and_default' && targetLocale === defaultLocale))
+   */
+    routeLocaleGetter(route) !== targetLocale
   ) {
     // the current route could be 404 in which case attempt to find matching route using the full path since
     // "switchLocalePath" can only find routes if the current route exists.
